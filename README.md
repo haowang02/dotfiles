@@ -36,4 +36,7 @@ rm -r ~/.local/share/nvim
 rm -r ~/.local/state/nvim
 rm -r ~/.cache/nvim
 cp -r ~/dotfiles/nvim ~/.config/
+
+# pip 换源
+pip config set global.index-url https://mirrors.cqu.edu.cn/pypi/web/simple
 ```
