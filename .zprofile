@@ -1,1 +1,1 @@
-export USER_DEFINED_HOSTNAME=A100
+export USER_DEFINED_HOSTNAME=$(hostname)
