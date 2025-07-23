@@ -78,3 +78,28 @@ export TORCH_HOME="path/to/cache/torch"
 export HF_HOME="path/to/cache/huggingface"
 export OLLAMA_MODELS="path/to/cache/ollama-models"
 ```
+
+安装新版本 git 和 git-lfs
+
+```bash
+# Git
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
+# Git LFS
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+```
+
+安装新版本 tmux
+
+```bash
+sudo apt update
+sudo apt install libevent-dev ncurses-dev build-essential bison pkg-config automake
+wget https://github.com/tmux/tmux/releases/download/3.5a/tmux-3.5a.tar.gz
+tar -xf tmux-3.5a.tar.gz
+cd tmux-3.5a
+./configure && make
+sudo make install
+```
