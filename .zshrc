@@ -8,20 +8,7 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export LD_LIBRARY_PATH=$HOME/.local/lib/ollama:$LD_LIBRARY_PATH
-# CUDA
-export PATH=$PATH:/usr/local/cuda/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
-export TORCH_HOME="$HOME/nas/cache/torch"
-export HF_HOME="$HOME/nas/cache/huggingface"
-export OLLAMA_MODELS="$HOME/public/ollama-models"
 export EDITOR="nvim"
-
-# Proxy
-local proxy="http://192.168.1.10:7891"
-export http_proxy=$proxy;export https_proxy=$proxy;export HTTP_PROXY=$proxy;export HTTPS_PROXY=$proxy
-export no_proxy="127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,localhost,*.local,<local>"
-export NO_PROXY="127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,172.29.0.0/16,localhost,*.local,<local>"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -96,6 +83,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ZVM_KEYTIMEOUT=0.1
 plugins=(
   git
+  tmux
   zoxide
   zsh-vi-mode
   zsh-autosuggestions
@@ -133,26 +121,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
 alias t="tmux new -A -s main"
-alias td="tmux detach"
 alias ff="fastfetch"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/wh/nas/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/wh/nas/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/wh/nas/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/wh/nas/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # Yazi shell wrapper
 function y() {
@@ -162,6 +134,3 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
