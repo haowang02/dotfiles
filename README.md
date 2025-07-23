@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles —— 快速初始化开发环境
 
 开始前确保家目录下不存在 `.oh-my-zsh` `bin` `scripts` `.tmux` 目录，若存在则提前备份并删除。
 
