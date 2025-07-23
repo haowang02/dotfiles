@@ -19,24 +19,54 @@ cd dotfiles
 bash setup.sh
 ```
 
-其他配置
+安装 iterm2 shell integration
 
 ```bash
-# 安装 iterm2 shell integration
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+```
 
-# 安装 nvitop
+安装 nvitop
+
+```bash
 sudo apt update
 sudo apt install python3-pip
 /usr/bin/pip3 install nvitop
+```
 
-# 安装 LazyVim
+安装 LazyVim
+
+```bash
 rm -r ~/.config/nvim
 rm -r ~/.local/share/nvim
 rm -r ~/.local/state/nvim
 rm -r ~/.cache/nvim
 cp -r ~/dotfiles/nvim ~/.config/
+```
 
-# pip 换源
+pip 换源
+
+```bash
 pip config set global.index-url https://mirrors.cqu.edu.cn/pypi/web/simple
+```
+
+配置代理
+
+```bash
+export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153
+```
+
+安装 Miniconda
+
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash ~/Miniconda3-latest-Linux-x86_64.sh
+./miniconda/condabin/conda init zsh
+```
+
+配置缓存路径
+
+```bash
+export TORCH_HOME="path/to/cache/torch"
+export HF_HOME="path/to/cache/huggingface"
+export OLLAMA_MODELS="path/to/cache/ollama-models"
 ```
