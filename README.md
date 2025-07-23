@@ -19,6 +19,13 @@ cd dotfiles
 bash setup.sh
 ```
 
+自定义 powerlevel10k 和 tmux status bar 上显示的主机名
+
+```bash
+# 编辑 .zprofile
+export USER_DEFINED_HOSTNAME=自定义主机名
+```
+
 安装 iterm2 shell integration
 
 ```bash
